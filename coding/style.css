@@ -1,0 +1,466 @@
+/* Basic Reset & Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #f7aef8);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1. STARTING SURPRISE SCREEN STYLING */
+#surprise-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffc2d1, #ffe5ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+.surprise-box {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    animation: fadeInEffect 1s ease-in-out;
+}
+
+.surprise-text {
+    font-size: 1.8rem;
+    color: #ff4d6d;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+#start-btn {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+    transition: transform 0.2s, background 0.3s;
+}
+
+#start-btn:hover {
+    background: #c9184a;
+    transform: scale(1.05);
+}
+
+/* Helper Class to Hide Screens */
+.hidden {
+    display: none !important;
+}
+
+/* 2. MAIN WEBSITE CONTENT */
+.main-container {
+    max-width: 600px;
+    width: 90%;
+    margin: 60px auto 40px auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Slider Customization for 4-5 Seconds Autoplay */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Aap isko 400px ya 450px kar ke check kar sakte hain apni pics ke mutabiq */
+    border-radius: 15px;
+    overflow: hidden; /* Yeh line picture ko container se baahar nahi nikalne degi */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Is se poori picture box ke andar perfect fit ho jaye gi aur kategi nahi */
+    background-color: #000; /* (Optional) Agar picture ke left/right khali jagah bache to wahan black background aa jaye, agar black nahi chahiye to is line ko mita sakte hain */
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #ff4d6d;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(255, 77, 109, 0.8);
+    color: white;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* Scrollable Message Box for Long Text */
+.message-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid #ff4d6d;
+    text-align: left;
+}
+
+.message-box h2 {
+    font-size: 1.4rem;
+    color: #ff4d6d;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.scrollable-text {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar for aesthetic look */
+.scrollable-text::-webkit-scrollbar {
+    width: 6px;
+}
+.scrollable-text::-webkit-scrollbar-thumb {
+    background-color: #ffc2d1;
+    border-radius: 10px;
+}
+
+.scrollable-text p {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.final-love {
+    font-weight: 600;
+    color: #ff4d6d !important;
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    margin-top: 20px;
+}
+
+/* Music Control Button */
+#music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: 0.3s;
+}
+
+#music-btn:hover {
+    background: #c9184a;
+}
+
+/* Floating Hearts Elements */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 77, 109, 0.4);
+    font-size: 1.5rem;
+    animation: floatUp 5s linear infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+.fade-in {
+    animation: fadeInEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeInEffect {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Balloon Game Styling */
+#balloon-game-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #ffeef2 0%, #ffd1dc 100%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+.game-instruction {
+    text-align: center;
+    margin-top: 20px;
+    z-index: 10002;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.game-instruction h2 { color: #d63384; font-size: 1.3rem; margin-bottom: 5px; }
+.game-instruction p { font-weight: bold; color: #333; }
+#balloon-container { position: relative; width: 100%; height: 100%; }
+.balloon {
+    position: absolute;
+    width: 50px; height: 65px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    cursor: pointer;
+    animation: floatUp var(--speed) linear infinite;
+    bottom: -100px;
+}
+.balloon::after {
+    content: "▲"; text-align: center; font-size: 8px; color: inherit;
+    position: absolute; bottom: -6px; left: 20px;
+}
+@keyframes floatUp {
+    0% { bottom: -100px; transform: translateX(0); }
+    50% { transform: translateX(var(--drift)); }
+    100% { bottom: 105vh; transform: translateX(0); }
+}
+
+/* Envelopes Styling */
+.envelopes-wrapper { text-align: center; margin: 30px 0; }
+.envelope-title { color: #d63384; font-family: 'Poppins', sans-serif; margin-bottom: 15px; font-size: 1.1rem;}
+.envelopes-container { display: flex; justify-content: space-around; max-width: 400px; margin: 0 auto; padding: 0 10px; }
+.envelope { background: #fff; padding: 15px 10px; border-radius: 15px; width: 30%; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.2s; cursor: pointer; }
+.envelope:active { transform: scale(0.95); }
+.envelope-card { font-size: 35px; margin-bottom: 5px; }
+.envelope p { font-size: 11px; font-weight: 600; color: #555; font-family: 'Poppins', sans-serif; line-height: 1.2; }
+
+/* Modal/Pop-up Window */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10005; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.3s; }
+.modal.hidden { display: none !important; }
+.modal-content { background: #fff0f3; padding: 30px 20px; border-radius: 20px; width: 85%; max-width: 350px; position: relative; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); font-family: 'Poppins', sans-serif; border: 2px solid #ffd1dc; color: #333; line-height: 1.6; }
+.close-modal { position: absolute; top: 10px; right: 15px; font-size: 28px; color: #aaa; cursor: pointer; }
+
+/* Password Lock Screen Styling */
+#password-lock-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffafcc 100%);
+    z-index: 20000; /* Sab se upar rakhne ke liye */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+.lock-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 85%;
+    max-width: 340px;
+    border: 2px solid #ff4d6d;
+}
+.lock-icon { font-size: 50px; margin-bottom: 15px; animation: heartbeat 1.5s infinite; }
+.lock-box h2 { color: #ff4d6d; font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; line-height: 1.4; }
+#secret-password-input {
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #ffd1dc;
+    border-radius: 12px;
+    font-size: 16px; /* Mobile keyboard zoom issues se bachne ke liye */
+    text-align: center;
+    outline: none;
+    transition: border 0.3s;
+}
+#secret-password-input:focus { border-color: #ff4d6d; }
+.lock-box button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 90%;
+    transition: background 0.2s;
+}
+.lock-box button:active { background: #ff758f; }
+#password-error-msg { color: #d63384; font-size: 13px; margin-top: 10px; font-weight: 600; }
+.error-hidden { display: none; }
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Proposal Quiz Styling */
+.quiz-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 85%;
+    max-width: 350px;
+    border: 2px solid #ff4d6d;
+    font-family: 'Poppins', sans-serif;
+}
+#quiz-dialogue {
+    font-size: 1.2rem;
+    color: #ff4d6d;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    min-height: 50px;
+}
+
+.quiz-btn {
+    background: linear-gradient(135deg, #ff4e50, #f9d423); /* Orange-Red gradient fill */
+    color: white !important; /* White text inside */
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px; /* Fully rounded elegant corners */
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4); /* Premium glow */
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.quiz-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 78, 80, 0.4);
+}
+
+#no-btn {
+    background: #6c757d !important; /* Grey color for No button */
+    border-radius: 50px !important; /* Same rounded shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Confetti styling */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    z-index: 99999;
+    animation: confettiFall 3s linear forwards;
+}
+@keyframes confettiFall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Broken image icon ko slider se clean hide karne ke liye */
+.slide img:not([src]), 
+.slide img[src=""] {
+    display: none !important;
+}
+
+.slide img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Agar koi image crash ho jaye to broken icon na dikhayi day */
+.slide img:-moz-broken, 
+.slide img:not([src]) {
+    visibility: hidden;
+}

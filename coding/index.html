@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Meri Jaan! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Secret Password Lock Screen -->
+<div id="password-lock-screen">
+    <div class="lock-box">
+        <div class="lock-icon">🔒</div>
+        <h2>Enter the Secret Password to Enter My Heart ❤️</h2>
+        <input type="password" id="secret-password-input" placeholder="Enter password here...">
+        <button onclick="checkSecretPassword()">Unlock Surprise</button>
+        <p id="password-error-msg" class="error-hidden">❌ Wrong Password! Try again my jaan... 🤔</p>
+    </div>
+</div>
+     
+    <!-- Balloon Popping Game Screen -->
+<div id="balloon-game-screen">
+    <div class="game-instruction">
+        <h2>🎈 Pop All Balloons to Unlock Your Surprise! 🎈</h2>
+        <p>Balloons Remaining: <span id="balloon-counter">60</span></p>
+    </div>
+    <div id="balloon-container"></div>
+</div>
+
+    <!-- Background Music (Perfect Loop Fixed) -->
+<audio id="bg-music" src="music.mp3" preload="auto" loop></audio>
+
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <div id="surprise-screen">
+    <div id="intro-box" class="quiz-box">
+        <h1>Are you ready for your surprise? 🎁</h1>
+       <button class="quiz-btn" onclick="startProposalQuiz()">Yes, I am Ready! ✨</button>
+    </div>
+
+    <div id="quiz-container" class="quiz-box hidden">
+        <div id="quiz-text-wrapper">
+            <p id="quiz-dialogue"></p>
+        </div>
+        <div id="quiz-buttons-wrapper">
+            </div>
+    </div>
+</div>
+
+    <!-- MAIN MAIN WEBSITE CONTENT (Hidden initially) -->
+    <div id="main-website" class="hidden">
+        
+        <!-- Music Control Button -->
+        <button id="music-btn" onclick="toggleMusic()">⏸️ Pause Music</button>
+
+        <div class="main-container">
+            <!-- Header Section -->
+            <header class="fade-in">
+                <h1 class="main-title">Happy Birthday, Meri Jaan! 🎂✨</h1>
+                <p class="subtitle">To the most beautiful person in my world...</p>
+            </header>
+
+            <!-- Image Slider Section -->
+            <div class="slider-container">
+                <div class="slider" id="image-slider">
+                    <!-- AAP APNI JITNI CHAHEIN PICS YAHAN ADD KAR SAKTE HAIN -->
+                    <!-- Bus copy-paste karte jayein aur pic ka naam change karein -->
+                    <div class="slide active"><img src="pic1.png" alt="Our Memory 1"></div>
+                    <div class="slide"><img src="pic2.jfif" alt="Our Memory 2"></div>
+                    <div class="slide"><img src="pic3.jfif" alt="Our Memory 3"></div>
+                    <div class="slide"><img src="pic4.jfif" alt="Our Memory 4"></div>
+                    <div class="slide"><img src="pic5.jfif" alt="Our Memory 5"></div>
+                    <div class="slide"><img src="pic6.jfif" alt="Our Memory 6"></div>
+                    <div class="slide"><img src="pic7.jfif" alt="Our Memory 7"></div>
+                    <div class="slide"><img src="pic8.jfif" alt="Our Memory 8"></div>
+                    <div class="slide"><img src="pic9.jfif" alt="Our Memory 9"></div>
+                    <div class="slide"><img src="pic10.jfif" alt="Our Memory 10"></div>
+                    <div class="slide"><img src="pic11.jfif" alt="Our Memory 11"></div>
+                    <div class="slide"><img src="pic12.jfif" alt="Our Memory 12"></div>
+                    <div class="slide"><img src="pic13.jfif" alt="Our Memory 13"></div>
+                    <div class="slide"><img src="pic14.jfif" alt="Our Memory 14"></div>
+                    <div class="slide"><img src="pic15.jfif" alt="Our Memory 15"></div>
+                    <div class="slide"><img src="pic16.jfif" alt="Our Memory 16"></div>
+                    <div class="slide"><img src="pic17.jfif" alt="Our Memory 17"></div>
+                    <div class="slide"><img src="pic18.jfif" alt="Our Memory 18"></div>
+                    <div class="slide"><img src="pic19.jfif" alt="Our Memory 19"></div>
+                    <div class="slide"><img src="pic20.jfif" alt="Our Memory 20"></div>
+                    <div class="slide"><img src="pic21.jfif" alt="Our Memory 21"></div>
+                    <div class="slide"><img src="pic22.jfif" alt="Our Memory 22"></div>
+                    <div class="slide"><img src="pic23.jfif" alt="Our Memory 23"></div>
+                    <div class="slide"><img src="pic24.jfif" alt="Our Memory 24"></div>
+                    <div class="slide"><img src="pic25.jfif" alt="Our Memory 25"></div>
+                    <div class="slide"><img src="pic26.jfif" alt="Our Memory 26"></div>
+                    <div class="slide"><img src="pic27.jfif" alt="Our Memory 27"></div>
+                    <div class="slide"><img src="pic28.jfif" alt="Our Memory 28"></div>
+                    <div class="slide"><img src="pic29.jfif" alt="Our Memory 29"></div>
+                    <div class="slide"><img src="pic30.jfif" alt="Our Memory 30"></div>
+                    <div class="slide"><img src="pic31.jfif" alt="Our Memory 31"></div>
+                    <div class="slide"><img src="pic32.jfif" alt="Our Memory 32"></div>
+                    <div class="slide"><img src="pic33.jfif" alt="Our Memory 33"></div>
+                    <div class="slide"><img src="pic34.jfif" alt="Our Memory 34"></div>
+                    <div class="slide"><img src="pic35.jfif" alt="Our Memory 35"></div>
+                    <div class="slide"><img src="pic36.jfif" alt="Our Memory 36"></div>
+                    <!-- Aap isi tarah pic6, pic7... pic30 tak extend kar sakte hain -->
+                </div>
+                <!-- Slider Navigation Buttons -->
+                <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+
+                 <!-- Interactive Love Letters Envelopes Section -->
+<div class="envelopes-wrapper">
+    <h3 class="envelope-title">✨ Three Special Letters For You ✨</h3>
+    <div class="envelopes-container">
+        <!-- Letter 1 -->
+        <div class="envelope" onclick="openLetter(1)">
+            <div class="envelope-card">💌</div>
+            <p>Open When You Miss Me</p>
+        </div>
+        <!-- Letter 2 -->
+        <div class="envelope" onclick="openLetter(2)">
+            <div class="envelope-card">💖</div>
+            <p>Open For A Secret</p>
+        </div>
+        <!-- Letter 3 -->
+        <div class="envelope" onclick="openLetter(3)">
+            <div class="envelope-card">🌹</div>
+            <p>Why I Love You</p>
+        </div>
+    </div>
+</div>
+
+<!-- Letter Pop-up Modal -->
+<div id="letter-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeLetter()">&times;</span>
+        <div id="letter-text"></div>
+    </div>
+</div>
+
+            <!-- Custom Birthday Long Message Section -->
+            <section class="message-box fade-in">
+                <h2>For You, My Everything ❤️</h2>
+                <div class="scrollable-text">
+                    <p>Happy Birthday to the my favorite woman. Today is all about you, the one who brings happiness, peace, and meaning to my world. I don't think words will ever be enough to explain how much you mean to me, but today I want to try.</p>
+                    
+                    <p>You are not just someone special to me, you are my world, my happiness, my peace, my comfort, my sukoon, and my everything. Every moment with you becomes a beautiful memory, and every day feels brighter because you are a part of my life. Your smile can make my worst day better, and your presence alone brings a sense of calm that I cannot find anywhere else.</p>
+                    
+                    <p>I feel incredibly lucky to have you in my life. You are the person I think about when I wake up and the last person on my mind before I sleep. You have become such an important part of me that imagining life without you feels impossible. You are my safe place, my favorite person, my biggest blessing, and the most beautiful chapter of my life.</p>
+                    
+                    <p>Above all, I pray that Allah always keeps us together, protects us, and fills our lives with happiness and peace. May He strengthen our bond with every passing day and bless us with a beautiful future. I pray that He always keeps you safe, healthy, and smiling. And most importantly, I pray that tears never come to your beautiful eyes because of sadness or pain. You deserve nothing but love, happiness, and endless reasons to smile. May Allah always watch over you, protect your heart, and keep you surrounded by His blessings every single day.</p>
+                    
+                    <p>On your special day, I want you to know that you deserve all the happiness, love, success, and blessings this world has to offer. May your life be filled with endless smiles, beautiful memories, and dreams that come true. I pray that every step you take leads you closer to everything your heart desires.</p>
+                    
+                    <p>Thank you for being my support when I need strength, my smile when I feel down, my peace when life gets difficult, and my reason to look forward to tomorrow. Thank you for being exactly who you are. You make my life more beautiful simply by being in it.</p>
+                    
+                    <p>No matter where life takes us, I will always cherish every laugh, every conversation, every memory, and every moment we share. You are truly one of a kind, and there will never be anyone who could replace the place you hold in my heart.</p>
+                    
+                    <p>So today, on your birthday, I just want to remind you once again that you are my world, my jan, my sukoon, my happiness, my favorite person, my comfort, my home, and my everything.</p>
+                    
+                    <p>I hope your birthday is as beautiful, special, and unforgettable as you are. May this new year of your life bring endless joy, success, love, and countless reasons to smile.</p>
+                    
+                    <p>Happy Birthday, My Jan. I love having you in my life, and I will always be grateful for you. May Allah bless you with a long, happy, and beautiful life.</p>
+                    
+                    <p class="final-love">I love u my jaan soo much🫠❤️‍🩹🤌🏻💋🫂🌚</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
